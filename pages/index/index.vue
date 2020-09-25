@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="logo-view">
-			<image class="logo" src="/static/index/logo.png"></image>
+			<image class="logo" src="/static/System/AppLogo.png"></image>
 		</view>
 		
 		<view class="user-name">
@@ -42,30 +42,26 @@
 </template>
 
 <script>
+import baseurl from '@/common/Global.js';
 import uniPopup from '@/components/uni-popup/uni-popup.vue'
 
 export default {
-	
 	components: {uniPopup},
 	
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '登陆中..'
-			},
-			
 			account: '',
 			password: '',
+			loadModal: { show: false, text: '登陆中..' },
 			applyText: '<div>345</div>',
 			//验证规则
 			rules: {
-				// account: [
-				// 	{
-				// 		rule: /^1[356789]\d{9}$/,
-				// 		msg: '手机号格式不正确'
-				// 	}
-				// ],
+				/* account: [
+					{
+				 		rule: /^1[3456789]\d{9}$/,
+						msg: '手机号格式不正确'
+				 	}
+				], */
 				password: [
 					{
 						rule: /^.{6,16}$/,
@@ -75,6 +71,7 @@ export default {
 			}
 		};
 	},
+	
 	methods: {
 		apply(){
 			this.$refs.popup.open()
@@ -86,10 +83,7 @@ export default {
 			this.rules[key].forEach(v => {
 				//验证失败
 				if (!v.rule.test(this[key])) {
-					uni.showToast({
-						title: v.msg,
-						icon: 'none'
-					});
+					uni.showToast({ title: v.msg, icon: 'none' });
 					check = false;
 					return false;
 				}
@@ -103,15 +97,13 @@ export default {
 			this.loadModal = { show: true, text: '登录中...' }
 			
 			uni.request({
-				url: 'http://livechb3.changhuoban.com/api/V1/login',
+				url: baseurl+'/V1/login',
 				method: 'POST',
 				data: {
 					account: this.account,
 					password: this.password
 				},
 				success: res => {
-					
-					console.log(res);
 					this.loadModal.show = false;
 					try {
 						if (res.data.success && res.data.success.token) {
@@ -135,6 +127,7 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/index.css';
+
+<style lang="scss">
+@import 'style/index.scss';
 </style>

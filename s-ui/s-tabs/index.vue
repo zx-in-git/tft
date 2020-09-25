@@ -45,7 +45,7 @@ export default {
 		},
 		activeColor: {
 			type: String,
-			default: '#ff8c00'
+			default: '#6C75FF'
 		},
 		// 标签栏高度 rpx
 		height: {

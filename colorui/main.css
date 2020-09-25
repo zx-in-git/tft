@@ -281,8 +281,8 @@ radio.red[checked] .wx-radio-input,
 switch.red.checked .uni-switch-input.uni-switch-input-checked,
 checkbox.red.checked .uni-checkbox-input,
 radio.red.checked .uni-radio-input {
-	background-color: #e54d42 !important;
-	border-color: #e54d42 !important;
+	background-color: #6C75FF !important;
+	border-color: #6C75FF !important;
 	color: #ffffff !important;
 }
 
@@ -1095,7 +1095,7 @@ button.cuIcon.lg {
 	border-top: 6upx solid rgba(0, 0, 0, 0.05);
 	border-right: 6upx solid rgba(0, 0, 0, 0.05);
 	border-bottom: 6upx solid rgba(0, 0, 0, 0.05);
-	border-left: 6upx solid #f37b1d;
+	border-left: 6upx solid #6C75FF;
 	animation: cuIcon-spin 1s infinite linear;
 	z-index: -1;
 }

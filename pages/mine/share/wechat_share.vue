@@ -29,16 +29,13 @@
 </template>
 
 <script>
-	import net from '../../../common/net.js';
+	import net from '@/common/net.js';
 	
 	export default {
 		
 		data() {
 			return {
-				loadModal: {
-					show: false,
-					text: '加载中...'
-				},
+				loadModal: { show: false, text: '加载中...' },
 				list: [],
 			}
 		},
@@ -52,9 +49,7 @@
 		methods: {
 			// 获取分享信息
 		  	getShareList(){
-		    	net({
-		        	url:"/V1/wx_share_list",
-		            method:'get',
+		    	net({ url:"/V1/wx_share_list", method:'get',
 		            success: (res) => {
 						this.loadModal.show = false;
 						console.log(res);

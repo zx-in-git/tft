@@ -7,7 +7,7 @@
 						<view class="model">选择回拨机具政策</view>
 						<view class="amount" v-if="policyInfo.id == undefined">请选择</view>
 						<view class="amount" v-else>{{policyInfo.title}}</view>
-						<image class="model-image" src="/static/jiantou.png" mode="widthFix"></image>
+						<image class="model-image" src="/static/public/jiantou.png" mode="widthFix"></image>
 					</view>
 				</navigator>
 			</view>
@@ -17,7 +17,7 @@
 					<view class="model">选择回拨伙伴</view>
 					<view class="amount" v-if="partnerInfo.id == undefined">请选择</view>
 					<view class="amount" v-else>{{partnerInfo.nickname}} - {{partnerInfo.account}}</view>
-					<image class="model-image" src="/static/jiantou.png" mode="widthFix"></image>
+					<image class="model-image" src="/static/public/jiantou.png" mode="widthFix"></image>
 				</view>
 				</navigator>
 			</view>
@@ -67,6 +67,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/transfer.css");
+<style lang="scss">
+	@import "@/pages/mine/style/transfer.scss";
 </style>

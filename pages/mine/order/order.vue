@@ -131,7 +131,7 @@
 import sTabs from '@/s-ui/s-tabs';
 import sTab from '@/s-ui/s-tab';
 
-import net from '../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	components: {
@@ -212,6 +212,6 @@ export default {
 };
 </script>
 
-<style>
-@import url(../style/orders.css);
+<style lang="scss">
+	@import "@/pages/mine/style/orders.scss";
 </style>

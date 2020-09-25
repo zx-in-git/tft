@@ -5,10 +5,10 @@
 			<view class="titlebar">
 				<view class="rise">
 					<view class="rise-head">
-						<image :src="UserInfo.heading" class="head" />
+						<image :src="UserInfo.heading+'?t=1'" class="head" />
 						<view class="name">{{ UserInfo.nickname }}</view>
 						<!-- <view class="shiming">
-							<image class="shiming-image" src="../../../../static/xz1.png" />
+							<image class="shiming-image" src="/static/xz1.png" />
 							<view class="shiming-text">已实名</view>
 						</view> -->
 						<view class="id">
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 	
 export default {
 	data() {
@@ -139,6 +139,6 @@ export default {
 };
 </script>
 
-<style>
-@import '../../style/team_detail.css';
+<style lang="scss">
+@import '@/pages/home/style/team_detail.scss';
 </style>

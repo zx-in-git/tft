@@ -91,7 +91,7 @@
 		<view class="class-view3">
 			<view class="view-text">
 				<navigator  hover-class="none"  url="callSet/call_set">
-					<image src="../../../static/jjhb.png" class="image"></image>
+					<image src="@/static/home/jjhb.png" class="image"></image>
 					<view class="figure">机具划拨</view>
 				</navigator>
 			</view>
@@ -99,14 +99,14 @@
 			<view class="shuxian1"></view>
 			<view class="view-text">
 				<navigator  hover-class="none"  url="callSet/call_back">
-					<image src="../../../static/jjhuib.png" class="image"></image>
+					<image src="@/static/home/jjhuib.png" class="image"></image>
 					<view class="figure">机具回拨</view>
 				</navigator>
 			</view>
 			<view class="shuxian1"></view>
 			<view class="view-text">
 				<navigator  hover-class="none"  url="callLog/callLog">
-					<image src="../../../static/hbjl.png" class="image"></image>
+					<image src="@/static/home/hbjl.png" class="image"></image>
 					<view class="figure">调拨记录</view>
 				</navigator>
 			</view>
@@ -127,7 +127,7 @@
 </template>
 
 <script>
-import net from '../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {
@@ -149,18 +149,13 @@ export default {
 	methods: {
 		// 获取机器数据
 		getMerchantData(){
-			net({
-				url: '/V1/getBindAll',
-				method: 'GET',
+			net({ url: '/V1/getBindAll', method: 'GET',
 				success: (res) => {
 					this.loadModal.show = false;
 					if (res.data.success) {
 						this.merchantData = res.data.success.data;
 					} else {
-						uni.showToast({
-							title: res.data.error.message,
-							icon: 'none'
-						})
+						uni.showToast({ title: res.data.error.message, icon: 'none' })
 					}
 					console.log(res);
 				}
@@ -170,7 +165,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../style/merchant.css");
+<style lang="scss">
+	@import "@/pages/mine/style/merchant.scss";
 </style>
-z

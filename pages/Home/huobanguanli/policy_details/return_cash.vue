@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="fr_top">
-			<image class="fr_iamge" src="../../../../static/mark.png"></image>
+			<image class="fr_iamge" src="/static/public/mark.png"></image>
 			<view class="view_p">注：当保存参数后新参数即时生效。</view>
 		</view>
 		
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
@@ -246,8 +246,9 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/profit_data.css");
+<style lang="scss">
+@import "@/pages/home/style/profit_data.scss";
+
 .body {
 	padding-bottom: 30rpx;
 	/* margin-bottom: 40rpx; */

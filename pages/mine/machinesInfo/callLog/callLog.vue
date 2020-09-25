@@ -23,7 +23,7 @@
 							<view class="content-text1" v-if="currentType == 'my_back' || currentType == 'parent_back'">类型：回拨</view>
 						</view>
 						<view class="div">
-							<view class="name">SN: {{item.merchant_sn }}</view>
+							<view class="name">SN: {{ item.merchant_sn }}</view>
 							<view class="time">{{ item.created_at }}</view>
 						</view>
 					</view>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
@@ -104,6 +104,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/transfer_log.css");
+<style lang="scss">
+@import "@/pages/mine/style/transfer_log.scss";
 </style>

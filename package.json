@@ -1,7 +1,7 @@
 {
   "name": "changhuoban",
   "version": "1.0.0",
-  "description": "畅伙伴3.0前段 UNI-app开发项目",
+  "description": "腾付通展业",
   "main": "main.js",
   "dependencies": {
     "@dcloudio/uni-ui": "^1.2.1"

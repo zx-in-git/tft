@@ -1,9 +1,9 @@
 {
-    "name" : "畅伙伴",
-    "appid" : "__UNI__7268560",
-    "description" : "畅伙伴3.0是一款分享赚钱自用省钱的app",
-    "versionName" : "2.0.1",
-    "versionCode" : "100",
+    "name" : "腾付通",
+    "appid" : "__UNI__ABE98D5",
+    "description" : "腾付通管理平台",
+    "versionName" : "1.0.2",
+    "versionCode" : 102,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
@@ -104,9 +104,9 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "hdpi" : "",
-                    "xhdpi" : "C:/Users/86319/Desktop/微信图片_20181215144431.png",
-                    "xxhdpi" : "C:/Users/86319/Desktop/微信图片_20181215144431.png"
+                    "hdpi" : "static/System/AppLunch.png",
+                    "xhdpi" : "static/System/AppLunch.png",
+                    "xxhdpi" : "static/System/AppLunch.png"
                 },
                 "ios" : {
                     "iphone" : {
@@ -118,13 +118,14 @@
                         "retina40l" : "",
                         "retina40" : "",
                         "retina47l" : "",
-                        "retina47" : "C:/Users/86319/Desktop/微信图片_20181215144431.png",
+                        "retina47" : "",
                         "retina55l" : "",
                         "retina55" : "",
                         "iphonexl" : "",
-                        "iphonex" : "C:/Users/86319/Desktop/微信图片_20181227165745.png"
+                        "iphonex" : ""
                     }
-                }
+                },
+                "androidStyle" : "default"
             }
         }
     },
@@ -148,7 +149,7 @@
         "usingComponents" : true
     },
     "h5" : {
-        "title" : "畅伙伴",
+        "title" : "腾付通",
         "domain" : "http://chbweb3.changhuoban.com",
         "devServer" : {
             "https" : false

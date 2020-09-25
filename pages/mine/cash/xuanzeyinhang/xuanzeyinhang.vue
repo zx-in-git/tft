@@ -1,80 +1,80 @@
 <template>
 	<view class="body">
 		<view class="top">
-		  <image src="../../../../static/left_fdj.png" class="img"></image>
+		  <image src="/static/public/left_fdj.png" class="img"></image>
 		  <input class="input" placeholder="" />
 		</view>
 		<view class="line"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/bj.png" class="bank"></image>
+		  <image src="/static/bank/bj.png" class="bank"></image>
 		  <view class="bank_name">北京银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/gs.png" class="bank"></image>
+		  <image src="/static/bank/gs.png" class="bank"></image>
 		  <view class="bank_name">工商银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/gd.png" class="bank"></image>
+		  <image src="/static/bank/gd.png" class="bank"></image>
 		  <view class="bank_name">光大银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/gf.png" class="bank"></image>
+		  <image src="/static/bank/gf.png" class="bank"></image>
 		  <view class="bank_name">广发银行</view>
 		</view>
 		<view class="line1"></view>
 		<!--  -->
 		<view class="bview">
-		  <image src="../../../../static/hx.png" class="bank"></image>
+		  <image src="/static/bank/hx.png" class="bank"></image>
 		  <view class="bank_name">华夏银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/js.png" class="bank"></image>
+		  <image src="/static/bank/js.png" class="bank"></image>
 		  <view class="bank_name">建设银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/jt.png" class="bank"></image>
+		  <image src="/static/bank/jt.png" class="bank"></image>
 		  <view class="bank_name">交通银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/minsheng.png" class="bank"></image>
+		  <image src="/static/bank/minsheng.png" class="bank"></image>
 		  <view class="bank_name">民生银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/ny.png" class="bank"></image>
+		  <image src="/static/bank/ny.png" class="bank"></image>
 		  <view class="bank_name">农业银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<!--  -->
 		<view class="bview">
-		  <image src="../../../../static/pa.png" class="bank"></image>
+		  <image src="/static/bank/pa.png" class="bank"></image>
 		  <view class="bank_name">平安银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/pf.png" class="bank"></image>
+		  <image src="/static/bank/pf.png" class="bank"></image>
 		  <view class="bank_name">浦发银行</view>
 		</view>
 		<view class="line1"></view>
 		
 		<view class="bview">
-		  <image src="../../../../static/sh.png" class="bank"></image>
+		  <image src="/static/bank/sh.png" class="bank"></image>
 		  <view class="bank_name">上海银行</view>
 		</view>
 		<view class="line1"></view>

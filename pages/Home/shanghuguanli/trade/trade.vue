@@ -16,7 +16,7 @@
 				</view>
 				<view class="datail-time">
 					<view class="datail-text">时间：{{ item.trade_time }}</view>
-					<view class="datail-text1">{{ (item.money / 100).toLocaleString() }}</view>
+					<view class="datail-text1">{{ item.money }}元</view>
 					<!-- <view class="datail-text2">交易成功</view> -->
 				</view>
 			</view>
@@ -38,7 +38,7 @@
 	import msDropdownMenu from '@/components/ms-dropdown/dropdown-menu.vue'
 	import msDropdownItem from '@/components/ms-dropdown/dropdown-item.vue'
 	
-	import net from '../../../../common/net.js';
+	import net from '@/common/net.js';
 	export default {
 		components: {
 			msDropdownMenu,
@@ -119,9 +119,7 @@
 			
 			// 获取交易列表
 			getTradeList(termNo, data_type){
-				net({
-					url: '/V1/getMerchantDetails',
-					method: 'GET',
+				net({ url: '/V1/getMerchantDetails', method: 'GET',
 					data: {
 						merchant: termNo,
 						data_type: data_type
@@ -145,5 +143,5 @@
 </script>
 
 <style lang="scss">
-@import url('../../style/merchant_trade.css');
+@import '@/pages/home/style/merchant_trade.scss';
 </style>

@@ -16,14 +16,11 @@
 </template>
 
 <script>
-	import net from '../../../common/net.js';
+	import net from '@/common/net.js';
 	export default {
 		data() {
 			return {
-				loadModal: {
-					show: false,
-					text: '提交中...'
-				},
+				loadModal: { show: false, text: '提交中...' },
 				UserInfo:[]
 			}
 		},
@@ -35,9 +32,7 @@
 		methods: {
 			// 获取用户个人信息
 				getUserInfo(){
-					net({
-			        	url:"/V1/userInfo",
-			            method:'get',
+					net({ url:"/V1/userInfo", method:'get',
 			            success: (res) => {
 							this.loadModal.show = false;
 							this.UserInfo = res.data.success.data;
@@ -47,16 +42,12 @@
 				
 				setUserInfo(){
 					this.loadModal.show = true;
-					net({
-						url:"/V1/setUserInfo",
-						method:'get',
+					net({ url:"/V1/setUserInfo", method:'get', 
 						data:{ nickname:this.UserInfo.nickname },
 						success: (res) => {
 						this.loadModal.show = false;
 							if (res.data.success) {
-								uni.showToast({
-									title: res.data.success.message,
-									icon: 'none',
+								uni.showToast({ title: res.data.success.message, icon: 'none',
 									success : function(){
 										setTimeout(function() {
 											uni.navigateBack();
@@ -64,10 +55,7 @@
 									}
 								});
 							} else {
-								uni.showToast({
-									title: res.data.error.message,
-									icon: 'none'
-								});
+								uni.showToast({ title: res.data.error.message, icon: 'none' });
 							}
 			            }
 			      	})
@@ -77,7 +65,6 @@
 	}
 </script>
 
-<style>
-	@import '../../../common/uni.css';
-	@import url("../style/cash-out.css");
+<style lang="scss">
+	@import "@/pages/mine/style/cash-out.scss";
 </style>

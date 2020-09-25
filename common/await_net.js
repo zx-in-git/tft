@@ -1,4 +1,4 @@
-import baseurl from './config.js';
+import baseurl from './Global.js';
 
 export default function await_net( url, mydata, myget ){
 
@@ -13,7 +13,7 @@ export default function await_net( url, mydata, myget ){
         }
 
 		uni.request({
-			
+	
 			url: baseurl + url, //真实接口地址。
 			
 			method:myget || "get",//请求的方式

@@ -2,7 +2,7 @@
 	<view>
 		
 		<view class="logo-view">
-			<image class="logo" src="/static/index/logo.png"></image>
+			<image class="logo" src="/static/System/AppLogo.png"></image>
 		</view>
 		
 		<view class="user-name">
@@ -38,13 +38,12 @@
 </template>
 
 <script>
+import baseurl from '@/common/Global.js';
+	
 export default {
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: ''
-			},
+			loadModal: { show: false, text: '' },
 			
 			code:'',
 			codeTime:0,
@@ -83,10 +82,7 @@ export default {
 			this.rules[key].forEach(v => {
 				//验证失败
 				if (!v.rule.test(this[key])) {
-					uni.showToast({
-						title: v.msg,
-						icon: 'none'
-					});
+					uni.showToast({ title: v.msg, icon: 'none' });
 					check = false;
 					return false;
 				}
@@ -105,13 +101,9 @@ export default {
 			};
 			this.loadModal.show = true;
 			
-			uni.request({
-				url: 'http://livechb3.changhuoban.com/api/V1/getCode',
-				method: 'POST',
-				data: { phone: this.account },
+			uni.request({ url: baseurl+'/V1/getCode', method: 'POST', data: { phone: this.account },
 				success: res => {
 					this.loadModal.show = false;
-					
 					if (res.data.success) {
 						uni.showToast({ title: '发送成功', icon: 'none', position: 'bottom' });
 						
@@ -160,9 +152,7 @@ export default {
 			
 			uni.showLoading();
 			
-			uni.request({
-				url: 'http://livechb3.changhuoban.com/api/V1/forgetPwd',
-				method: 'POST',
+			uni.request({ url: baseurl+'/V1/forgetPwd', method: 'POST',
 				data: {
 					code: this.code,
 					account: this.account,
@@ -195,6 +185,6 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/forgetPassword.css';
+<style lang="scss">
+@import 'style/forgetPassword.scss';
 </style>

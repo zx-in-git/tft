@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {

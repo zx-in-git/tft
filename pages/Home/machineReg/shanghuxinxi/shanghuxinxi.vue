@@ -3,7 +3,7 @@
 		<view class="heads">
 			<view class="head">
 				<view class="head-view">
-					<image class="head-image" src="../../../../static/shuzi/1.png" />
+					<image class="head-image" src="/static/shuzi/1.png" />
 					<view class="head-xian"></view>
 				</view>
 				<view class="head-text croci">个人信息</view>

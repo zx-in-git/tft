@@ -45,7 +45,7 @@
 								@change="changeDatetimePicker"
 							>
 							</biaofun-datetime-picker>
-							<image src="../../../static/calendar.png" class="calendar-img" mode="widthFix" style="width: 56rpx;"></image>
+							<image src="/static/public/calendar.png" class="calendar-img" mode="widthFix" style="width: 56rpx;"></image>
 						</view>
 					</view>
 					
@@ -54,7 +54,7 @@
 						<view class="data-s">
 							<view class="deal">交易总数</view>
 							<view class="money">{{ datalist.trade }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>
@@ -64,7 +64,7 @@
 						<view class="data-s">
 							<view class="deal">激活总数</view>
 							<view class="money">{{ datalist.activeCount }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>		
@@ -74,7 +74,7 @@
 						<view class="data-s">
 							<view class="deal">机具总数</view>
 							<view class="money">{{ datalist.temails }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>					
@@ -84,7 +84,7 @@
 						<view class="data-s">
 							<view class="deal">收益总数</view>
 							<view class="money">{{ datalist.income }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>	
@@ -94,7 +94,7 @@
 						<view class="data-s">
 							<view class="deal">伙伴总数</view>
 							<view class="money">{{ datalist.friends }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>	
@@ -103,7 +103,7 @@
 						<view class="data-s">
 							<view class="deal">商户总数</view>
 							<view class="money">{{ datalist.merchants }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>
@@ -113,7 +113,7 @@
 						<view class="data-s">
 							<view class="deal">台均交易量</view>
 							<view class="money">{{ datalist.Avg }}</view>
-							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							<image class="image" src="/static/public/jiantou.png" mode="aspectFit" />
 						</view>
 						<view class="hengxian"></view>
 					</view>
@@ -134,7 +134,7 @@
 
 <script>
 	
-import net from '../../../common/net.js';
+import net from '@/common/net.js';
 import biaofunDatetimePicker from '@/components/biaofun-datetime-picker/biaofun-datetime-picker.vue';
 
 export default {
@@ -280,8 +280,9 @@ export default {
 };
 </script>
 
-<style>
-@import '../style/trade_detail.css';
+<style lang="scss">
+	
+@import '@/pages/team/style/trade_detail.scss';
 
 .placeholder {
 	line-height: 50rpx;

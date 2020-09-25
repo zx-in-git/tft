@@ -1,19 +1,20 @@
-<style>
+<style lang="scss">
 /*每个页面公共css */
 /* 官方UI库 */
-@import url('/common/uni.css');
+@import url('/common/style/uni.css');
 /* 自定义图标库 */
-@import url('/common/icon.css');
+@import url('/common/style/icon.css');
 /* UI基础库 */
-@import url('/common/zcm-main.css');
+@import url('/common/style/zcm-main.css');
 /* 公共样式 */
-@import url('/common/common.css');
+@import url('/common/style/common.css');
 /* 全局图标样式*/
-@import '/common/iconfont.css';
+@import '/common/style/iconfont.css';
 
 /* colorui */
 @import 'colorui/main.css';
 @import 'colorui/icon.css';
+
 
 uni-checkbox .uni-checkbox-input {
 	border-radius: 50% !important;
@@ -23,9 +24,12 @@ uni-checkbox .uni-checkbox-input {
 
 uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {
 	color: #fff;
-	border-color: #ee4000;
-	background: #ee4000;
+	background: $system-color;
+	border-color: $system-color;
 }
+
+
+
 uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:after {
 	font-size: 18px;
 }
@@ -52,20 +56,24 @@ uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:after {
 }
 </style>
 <script>
-	export default {
+	/**
+	 *  网络请求类
+	 */
+	//import net from '@/common/net.js';
+	import baseurl from '@/common/Global.js';
+	
+	export default {		
 		onLaunch: function () {
-			//#ifdef APP-PLUS  
-			var server = "http://livechb3.changhuoban.com/api/V1/appUpdate"; //检查更新地址  
+			//#ifdef APP-PLUS
+			var server = baseurl+"/V1/appUpdate"; //检查更新地址  
 			var req = { //升级检测数据
 				"appid": plus.runtime.appid,
 				"version": plus.runtime.version
 			};
-			console.log(req);
 			
-			uni.request({
-				url: server,
-				data: req,
+			uni.request({ url: server, data: req,
 				success: (res) => {
+					console.log(res)
 					// if (res.statusCode == 200 &amp;&amp; res.data.status === 1) {
 					if (res.data.success && res.data.success.url != undefined) {
 						uni.showModal({ //提醒用户更新

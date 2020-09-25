@@ -2,7 +2,7 @@
 	<view>
 		<view class="sousuo">
 			<view class="sousuo-view">
-				<image class="input-image" src="/static/left_fdj.png" mode="aspectFit"></image>
+				<image class="input-image" src="/static/public/left_fdj.png" mode="aspectFit"></image>
 				<input class="input" placeholder="请正确伙伴手机号" />
 			</view>
 		</view>
@@ -44,7 +44,7 @@
 	</view>
 </template>
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
@@ -109,6 +109,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/partner_opt.css");
+<style lang="scss">
+	@import "@/pages/mine/style/partner_opt.scss";
 </style>

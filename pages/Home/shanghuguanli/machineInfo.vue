@@ -3,7 +3,7 @@
 		<!-- 搜索框 -->
 		<view class="sousuo">
 			<view class="sousuo-view">
-				<image class="input-image" src="/static/left_fdj.png" mode="aspectFit"></image>
+				<image class="input-image" src="/static/public/left_fdj.png" mode="aspectFit"></image>
 				<input class="input" placeholder="SN/姓名/手机号/商户号" />
 			</view>
 		</view>
@@ -23,7 +23,7 @@
 		</view>
 		
 		<view class="content">
-			<view v-if="Head == 0 && bindList.length != 0">
+			<view v-if="Head == '0' && bindList.length != 0">
 				<!-- 已绑定商户 -->
 				<!-- <navigator  hover-class="none"  v-if="Head == 0" v-for="(item, index) in bindList" :key="index" :url="'machineFirst/machineFirst?id=' + item.machine_id"> -->
 				<navigator v-if="Head == 0" v-for="(item, index) in bindList" :key="index" :url="'machineFirst/machineFirst?id=' + item.id">
@@ -49,8 +49,8 @@
 			
 			
 			<!-- 未绑定商户 -->
-			<view v-if="Head == 1 && unBindList.length != 0">
-				<navigator  hover-class="none"  v-if="Head == 1" v-for="(item, index) in unBindList" :key="index" :url="'machineFirst/machineFirst'">
+			<view v-if="Head == '1' && unBindList.length != 0">
+				<navigator  hover-class="none"  v-if="Head == 1" v-for="(item, index) in unBindList" :key="index" :url="'machineFirst/machineFirst?id=' + item.id">
 					<view id="view">
 						<view class="detail">
 							<view class="detail-name">{{ item.merchant_name }}</view>
@@ -80,14 +80,11 @@
 </template>
 
 <script>
-import net from '../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			tabIndex: 0,
 			HeadClass: 1,
 			Head:0,
@@ -101,13 +98,14 @@ export default {
 	},
 	
 	onLoad() {
-		this.loadModal.show = true;
+		//this.loadModal.show = true;
 		// 获取商户列表
 		this.getMerchantsList();
 	},
 	
 	methods: {
 		HeadTab(index) {
+			console.log(index)
 			if (this.Head == index) { return; }
 			this.Head = index;
 			// 信息为空时，显示提示信息
@@ -117,10 +115,9 @@ export default {
 		
 		// 获取商户列表
 		getMerchantsList(){
-			net({
-				url: '/V1/getMerchantsList',
-				method: 'GET',
+			net({ url: '/V1/getMerchantsList', method: 'GET',
 				success: (res) => {
+					console.log(res)
 					this.loadModal.show = false;
 					if(res.data.success && res.data.success.data){
 						this.bindList = res.data.success.data.Bound;
@@ -135,7 +132,7 @@ export default {
 };
 </script>
 
-<style>
-@import url("../style/merchant_list.css");
+<style lang="scss">
+@import "@/pages/home/style/merchant_list.scss";
 </style>
 

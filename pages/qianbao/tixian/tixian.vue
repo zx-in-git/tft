@@ -7,7 +7,7 @@
 					<view style="font-size: 30upx;">民生银行</view>
 					<view style="font-size: 30upx;">622622******8888</view>
 				</view>
-				<image src="/static/jiantou.png" class="cxk"></image>
+				<image src="/static/public/jiantou.png" class="cxk"></image>
 			</view>
 		</navigator>
 		<view class="body">

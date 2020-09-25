@@ -60,17 +60,17 @@
 		</view>
 		<view class="class-view3">
 			<view class="view-text">
-				<image src="../../../static/jjhb.png" class="image"></image>
+				<image src="/static/home/jjhb.png" class="image"></image>
 				<view class="figure">机具划拨</view>
 			</view>
 			<view class="shuxian"></view>
 			<view class="view-text">
-				<image src="../../../static/jjhuib.png" class="image"></image>
+				<image src="/static/home/jjhuib.png" class="image"></image>
 				<view class="figure">机具回拨</view>
 			</view>
 			<view class="shuxian"></view>
 			<view class="view-text">
-				<image src="../../../static/hbjl.png" class="image"></image>
+				<image src="/static/home/hbjl.png" class="image"></image>
 				<view class="figure">调拨记录</view>
 			</view>
 			<view class="shuxian"></view>

@@ -6,7 +6,7 @@
 			<view class="titlebar">
 				<view class="rise"> 
 					<view class="rise-head">
-						<image class="head" :src="UserInfo.heading" @click="changeAvatar()" mode="aspectFill" />
+						<image class="head" :src="UserInfo.heading+'?t=1'" @click="changeAvatar()" mode="aspectFill" />
 						<view class="name">账号:{{ UserInfo.account}}</view>
 					</view>
 
@@ -17,7 +17,7 @@
 
 			<view class="earnings">
 				
-				<navigator  hover-class="none"  url="cash/cash">
+				<navigator hover-class="none"  url="cash/cash">
 					<view class="tixian">提现</view>
 				</navigator>
 				
@@ -34,12 +34,12 @@
 				<view class="eings d-flex">
 					<view class="eings-view">
 						<view style="color: #666;">分润钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.cash_blance }}</view>
+						<view class="blance_text">{{UserInfo.cash_blance }}</view>
 					</view>
 					<view class="shuxian"></view>
 					<view class="eings-view">
 						<view style="color: #666;">返现钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.return_blance }}</view>
+						<view class="blance_text">{{UserInfo.return_blance }}</view>
 					</view>
 				</view>
 			</view>
@@ -53,18 +53,18 @@
 				
 				<navigator  hover-class="none"  class="url" url="machinesInfo/machinesInfo">
 					<view class="div">
-						<image class="div-img" src="/static/wd/jj.png" />
+						<image class="div-img" src="/static/home/temial.png" />
 						<view class="div-text">机具管理</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					<view class="across"></view>
 				</navigator>
 				
 				<navigator  hover-class="none"  class="url" url="order/order">
 					<view class="div">
-						<image class="div-img" src="/static/wd/sh.png" />
+						<image class="div-img" src="/static/mine/order.png" />
 						<view class="div-text">我的订单</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					
 				</navigator>
@@ -74,9 +74,9 @@
 				<!--
 				<navigator  hover-class="none"  class="url" :url="'wodezhengc/wodezhengc?uid=' + UserInfo.id">
 					<view class="div">
-						<image class="div-img" src="/static/wd/cp.png" />
+						<image class="div-img" src="/static/mine/cp.png" />
 						<view class="div-text">我的政策</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					<view class="across"></view>
 				</navigator>
@@ -86,9 +86,9 @@
 
 				<navigator  hover-class="none"  class="url" :url="'share/wechat_share?uid=' + UserInfo.id">
 					<view class="div">
-						<image class="div-img" src="/static/wx.png" />
+						<image class="div-img" src="/static/mine/wx.png" />
 						<view class="div-text">微信分享</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					
 				</navigator>
@@ -99,35 +99,35 @@
 					<view class="div">
 						<image class="div-img" src="/static/yaoqing.png" />
 						<view class="div-text">推广商户</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					<view class="across"></view>
 				</navigator>
 				<view class="across"></view>				
 				-->
 				
-				<navigator  hover-class="none"  class="url" url="../Home/zaixiankefu/zaixiankefu">
+				<navigator  hover-class="none"  class="url" url="<!-- ../Home/zaixiankefu/zaixiankefu -->">
 					<view class="div">
-						<image class="div-img" src="/static/wd/kf.png" />
+						<image class="div-img" src="/static/home/server.png" />
 						<view class="div-text">在线客服</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					<view class="across"></view>
 				</navigator>
 
 				<navigator  hover-class="none"  class="url" url="xiaoxitongzhi/xiaoxitongzhi">
 					<view class="div">
-						<image class="div-img" src="/static/wd/xiaoxi.png" />
+						<image class="div-img" src="/static/mine/message.png" />
 						<view class="div-text">消息通知</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					<view class="across"></view>
 				</navigator>
 				<navigator  hover-class="none"  class="url" url="bankSet/bankSet">
 					<view class="div">
-						<image class="div-img" src="/static/xtsz.png" />
+						<image class="div-img" src="/static/mine/setting.png" />
 						<view class="div-text">系统设置</view>
-						<image class="arrows" src="/static/jiantou.png" />
+						<image class="arrows" src="/static/public/jiantou.png" />
 					</view>
 					
 				</navigator>
@@ -145,7 +145,7 @@
 	</view>
 </template>
 <script>
-import net from '../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {
@@ -246,6 +246,6 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/mine.css';
+<style lang="scss">
+@import 'style/mine.scss';
 </style>

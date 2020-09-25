@@ -3,7 +3,7 @@
 		<!-- 按钮 -->
 		<navigator  hover-class="none"  url="../xinzeng/xinzeng" open-type="navigate">
 			<view id="button">
-				<image class="button-img" src="../../../../static/+.png" mode="widthFix"></image>
+				<image class="button-img" src="@/static/public/+.png" mode="widthFix"></image>
 				<view class="button-text">添加新的发货地址</view>
 			</view>
 		</navigator>
@@ -26,12 +26,12 @@
 				<!-- 编辑删除 -->
 				<view class="site-for">
 					<view class="for" @click="addressDel(item.id, index)">
-						<image class="for-img" src="../../../../static/shanchu.png" mode="widthFix"></image>
+						<image class="for-img" src="@/static/public/delete.png" mode="widthFix"></image>
 						<view class="for-text">删除</view>
 					</view>
 					<navigator  hover-class="none"  :url="'../xinzeng/address_edit?address_id=' + item.id">
 						<view class="for">
-								<image class="for-img" src="../../../../static/xiugai.png" mode="widthFix"></image>
+								<image class="for-img" src="@/static/public/edit.png" mode="widthFix"></image>
 								<view class="for-text">编辑</view>
 						</view>
 					</navigator>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
@@ -139,6 +139,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/address.css");
+<style lang="scss">
+@import "@/pages/home/style/address.scss";
 </style>

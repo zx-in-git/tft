@@ -13,7 +13,7 @@
 		</view>
 		
 		<view v-if="article.length == 0"  style="height: 100%;  display: flex; justify-content: center;align-items: center; background-color: #f5f5f5;">
-			<image src="/static/no-data.jpeg" mode="widthFix"></image>
+			<image src="/static/public/no-data.jpeg" mode="widthFix"></image>
 		</view>
 		
 		<view class="cu-load load-modal" v-if="loadModal.show">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-	import net from '../../common/net.js';
+	import net from '@/common/net.js';
 
 	export default {
 		data() {

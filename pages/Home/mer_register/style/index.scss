@@ -1,0 +1,99 @@
+page {background-color: #f7f7f7; min-height: 100%;}
+
+.cHeight{
+	height: 90%;
+}
+.navbar { display: flex; height: 40px;
+	padding: 0 5px;
+	background: #fff;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+	position: relative;
+	z-index: 10;
+	.nav-item { flex: 1; display: flex; justify-content: center;
+		align-items: center;
+		height: 100%;
+		font-size: 15px;
+		color: "#ccc";
+		position: relative;
+		&.current { color: $system-color;
+			&:after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				transform: translateX(-50%);
+				width: 44px;
+				height: 0;
+				border-bottom: 2px solid $system-color;
+			}
+		}
+	}
+}
+
+.container2 {
+	width: 100%;
+	height: 100%;
+	margin-top: 10rpx;
+	overflow: hidden;
+}
+
+.sw {
+	width: 100%;
+	height: 90%;
+}
+
+.img {
+	/* width: 90%; */
+	height: 93%;
+	margin: 20rpx auto;
+}
+
+button {
+	width: 90%;
+	background: $system-bt-color;
+	color: white;
+	margin: 0 auto;
+	margin-top: 0rpx;
+}
+
+
+.back { background-color: #fff; }
+.input-text { color: #999; font-size: 28rpx; }
+
+/* 商户注册-商户类型 */
+.type-form { width: 100%; background-color: #fff; margin-top: 20rpx; padding: 0 4%; }
+.type-form-title { height: 110rpx; line-height: 92rpx; padding-top: 18rpx; color: #585858; font-size: 28rpx; }
+.type-form-bg { border: 1px solid #eee; background-color: #fafafa; border-radius: 4px; }
+.radio { margin: 0 20rpx; transform:scale(0.9); }
+.radio-group-block { display: block; }
+.left-radio-group { line-height: 110rpx; font-size: 30rpx; }
+.left-radio-group+.left-radio-group {border-top: 1px solid #eee;}
+
+.cu-list.menu>.cu-item { background-color: #fafafa; margin-bottom: 1px; }
+/* .cu-item+.cu-item { border-top: 1px solid #eee; } */
+.group-left-title { color: #4a4a4a; font-size: 28rpx; }
+.group-left-title::before { content: "*"; color: #ea5050; font-size: 30rpx; width: 24rpx; height: 24rpx; display: inline-block; vertical-align: middle; line-height: 36rpx;}
+.picker { color: #999; }
+.action-place { display: inline-block; width: 110rpx; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.font-bold { color: #4a4a4a; }
+.type-form-input { text-align: right; }
+.checkbox-w8 { transform:scale(0.7); }
+.type-form-foot { height: 100rpx; line-height: 100rpx; font-size: 26rpx; }
+.type-foot-checkbox { margin-right: 16rpx; }
+.type-foot-agree { color: $system-color; }
+.ty-fo-left-text { color: #666; }
+.type-foot { width: 100%; height: 120rpx; padding: 0 4%; background-color: #fff; position: fixed; left: 0; bottom: 0;}
+.type-foot button { background: $system-bt-color; color: #fff;}
+
+/* 商户身份信息认证 */
+.auth-card-top { margin-top: 24rpx; }
+.auth-card-2 { width: 50%; display: inline-block; margin: 0 auto; background-color: #fff; text-align: center; }
+.auth-card-img { width: 200rpx; height: 120rpx; border-radius: 8rpx; margin-top: 50rpx; }
+.auth-card-tips { height: 92rpx; line-height: 92rpx; color: #333; }
+.id-auth-form { width: 100%; padding: 0 4% 40rpx; margin: 24rpx 0 140rpx; background-color: #fff; }
+
+uni-radio .uni-radio-input-checked {
+	color: #fff;
+	background: $system-color!important;
+	border-color: $system-color!important;
+}

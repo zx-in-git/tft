@@ -193,8 +193,8 @@ export default {
 };
 </script>
 
-<style>
-	@import url("../../style/address_add.css");
+<style lang="scss">
+	@import "@/pages/home/style/address_add.scss";
 	.cu-form-group .title {
 		min-width: calc(4em + 15px);
 	}

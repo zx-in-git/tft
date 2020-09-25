@@ -1,4 +1,4 @@
-import baseurl from './config.js';
+import baseurl from './Global.js';
 
 // 公共的请求
 const net = function(options) {

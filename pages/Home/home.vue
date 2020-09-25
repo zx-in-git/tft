@@ -5,7 +5,7 @@
 		
 		<!-- 公告 -->
 		<view class="notice" v-if="notice_show">
-			<image class="notice-img" src="../../static/laba.png" mode="widthFix"></image>
+			<image class="notice-img" src="@/static/home/laba.png" mode="widthFix"></image>
 			<navigator :url=" '../Article/ArtilcleDetail?aid=' + notice.id" style="width: 90%;">
 				<view class="notice-text"> {{ notice.title}} </view>
 			</navigator>
@@ -53,7 +53,7 @@
 import swiperImage from '@/components/home/swiper-image.vue';
 import homeNav from '@/components/home/home-nav.vue';
 
-import net from '../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	
@@ -64,10 +64,7 @@ export default {
 	
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			// 轮播图
 			swipers: [],
 			// 公告信息
@@ -77,21 +74,21 @@ export default {
 			
 			// 统计信息
 			info: {
-				MonthTrade: 0,	// 月交易量
-				MonthTeam:	0,	// 新增伙伴
-				MonthIncome:0,  // 本月收益
-				MonthMerchant:0,// 新增商户
+				MonthTrade: "0.00",	// 月交易量
+				MonthTeam:	"0",	// 新增伙伴
+				MonthIncome:"0.00",  // 本月收益
+				MonthMerchant:"0",// 新增商户
 			},
 			
 			indexnavs: [
-				{ src: '/static/wd/jj.png', text: '机具管理', url: '/pages/mine/machinesInfo/machinesInfo' },
-				{ src: '/static/2.png', text: '商户注册', url: '/pages/Home/mer_register/share_poster' },
-				{ src: '/static/3.png', text: '商户登记', url: '/pages/Home/machineReg/machineReg' },
-				{ src: '/static/13.png', text: '商户管理', url: '/pages/Home/shanghuguanli/machineInfo' },
-				{ src: '/static/5.png', text: '商城购买', url: '' },
-				{ src: '/static/4.png', text: '团队拓展', url: '/pages/Home/team_expand/team_expand' },
-				{ src: '/static/44.png', text: '伙伴管理', url: '/pages/Home/huobanguanli/friendsInfo' },
-				{ src: '/static/8.png', text: '在线客服', url: '' }
+				{ src: '/static/home/temial.png', text: '机具管理', url: '/pages/mine/machinesInfo/machinesInfo' },
+				{ src: '/static/home/merchant.png', text: '商户注册', url: '/pages/Home/mer_register/index' },
+				{ src: '/static/home/bind.png', text: '终端绑定', url: '/pages/Home/machineReg/machineReg' },
+				{ src: '/static/home/merchant.png', text: '商户管理', url: '/pages/Home/shanghuguanli/machineInfo' },
+				{ src: '/static/home/shop.png', text: '商城购买', url: '' },
+				{ src: '/static/home/team.png', text: '团队拓展', url: '/pages/Home/team_expand/team_expand' },
+				{ src: '/static/home/team.png', text: '伙伴管理', url: '/pages/Home/huobanguanli/friendsInfo' },
+				{ src: '/static/home/server.png', text: '在线客服', url: '' }
 			]
 		};
 	},
@@ -124,14 +121,11 @@ export default {
 	methods: {	
 		// 获取轮播图
 	  	getSwipers(){
-	    	net({
-	        	url:"/V1/plug",
-	            method:'get',
-				data:{type:1},
+	    	net({ url:"/V1/plug", method:'get', data:{type:1},
 	            success: (res) => {
+					console.log(res)
 					if (res.data.success && res.data.success.data) this.swipers = res.data.success.data;
 					else uni.showToast({ title: res.data.error.message, icon: 'none' });
-					
 					this.loadModal.show = false;
 	            }
 	      	})
@@ -139,25 +133,19 @@ export default {
 		
 		// 获取公告信息
 		getNotice(){
-	    	net({
-	        	url:"/V1/notice",
-	            method:'get',
-				data:{type_id:1},
+	    	net({ url:"/V1/notice", method:'get', data:{type_id:1},
 	            success: (res) => {
 					if(res.data.success.data){
-						this.notice = res.data.success.data;
-						this.notice_show = true;
-					}
-					else uni.showToast({ title: res.data.error.message, icon: 'none' });
+						this.notice 		= res.data.success.data;
+						this.notice_show 	= true;
+					} else uni.showToast({ title: res.data.error.message, icon: 'none' });
 	            }
 	      	})
 		},
 		
 		// 获取首页统计信息
 	  	getHomeInfo(){
-	    	net({
-	        	url:"/V1/index_info",
-	            method:'get',	
+	    	net({ url:"/V1/index_info", method:'get',	
 	            success: (res) => {
 					if(res.data.success && res.data.success.data) this.info = res.data.success.data;
 					else uni.showToast({ title: res.data.error.message, icon: 'none' });
@@ -170,6 +158,6 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/shouye.css';
+<style lang="scss">
+@import 'style/home.scss';
 </style>

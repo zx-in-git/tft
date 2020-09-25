@@ -5,7 +5,7 @@
 			
 			<navigator  hover-class="none"  url="../dizhi/dizhi?pages=place_order" v-if="address == ''">
 				<view class="addressBar-name">选择收货地址</view>
-				<image class="addressBar-image" src="/static/jiantou.png"></image>
+				<image class="addressBar-image" src="/static/public/jiantou.png"></image>
 				<view class="d-flex">
 					<view class="site"></view>
 				</view>
@@ -14,7 +14,7 @@
 			
 			<navigator  hover-class="none"  url="../dizhi/dizhi?pages=place_order" v-else>
 				<view class="addressBar-name">{{address.name}} {{address.tel}}</view>
-				<image class="addressBar-image" src="/static/jiantou.png"></image>
+				<image class="addressBar-image" src="/static/public/jiantou.png"></image>
 				<view class="d-flex">
 					<view class="label">地址</view>
 					<view class="site">{{address.province}}{{address.city}}{{address.area}}{{address.detail}}</view>
@@ -29,7 +29,7 @@
 			<view class="xian"></view>
 			<view class="pay">
 				<view class="pay-view">
-					<image class="pay-img" src="../../../../static/wx.png" mode="widthFix" />
+					<image class="pay-img" src="@/static/mine/wx.png" mode="widthFix" />
 					<view class="pay-text">微信支付</view>
 				</view>
 				<view class="ckeck">
@@ -39,7 +39,7 @@
 			<view class="xian"></view>
 			<view class="pay">
 				<view class="pay-view">
-					<image class="pay-img" src="../../../../static/zfb.jpg" mode="widthFix" />
+					<image class="pay-img" src="/static/public/zfb.jpg" mode="widthFix" />
 					<view class="pay-text">支付宝支付</view>
 				</view>
 				<view class="ckeck">
@@ -61,7 +61,7 @@
 <script>
 import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
 
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	components: {
 		uniNumberBox

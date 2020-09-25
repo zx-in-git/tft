@@ -2,7 +2,7 @@
 	<view>
 		<view id="view">
 			<view id="view_view">
-				<image src="../../../../static/sousuo.png"></image>
+				<image src="/static/public/left_fdj.png"></image>
 				<input placeholder="  请输入有效的SN号" class="v_input" placeholder-class="place" />
 			</view>
 		</view>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
@@ -113,6 +113,6 @@ export default {
 };
 </script>
 
-<style>
-	@import url("../../style/merchant_list.css");
+<style lang="scss">
+	@import "@/pages/mine/style/merchant_list.scss";
 </style>

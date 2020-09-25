@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {
@@ -178,8 +178,8 @@ export default {
 };
 </script>
 
-<style>
-	@import url("../../style/settle_card.css");
+<style lang="scss">
+	@import "@/pages/mine/style/settle_card.scss";
 	.cu-form-group .title {
 		min-width: calc(4em + 15px);
 	}

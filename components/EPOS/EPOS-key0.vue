@@ -17,7 +17,7 @@
 				<view class="way-flex" @click="showBottom()">
 					<view class="way-name"><text>支付方式</text></view>
 					<view class="way-text"><text>平安银行(6222000000000000000)</text></view>
-					<image class="way-src" src="/static/jiantou.png"></image>
+					<image class="way-src" src="/static/public/jiantou.png"></image>
 				</view>
 				<bottomSheet :isShowBottom="isShowBottom"  @closeBottom="closeBottom"></bottomSheet>
 			</view>

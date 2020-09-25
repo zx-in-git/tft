@@ -35,7 +35,7 @@
 			</view>
 		</view>
 
-		<view><button @click="addressAdd">保 存</button></view>
+		<view> <button @click="addressAdd">保 存</button></view>
 		
 		<view class="cu-load load-modal" v-if="loadModal.show">
 		   <image src="/static/public/loading.png" mode="aspectFit"></image>
@@ -47,7 +47,7 @@
 <script>
 import wPicker from '@/components/w-picker/w-picker.vue';
 
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	components: {
@@ -157,8 +157,8 @@ export default {
 };
 </script>
 
-<style>
-	@import url("../../style/address_add.css");
+<style lang="scss">
+	@import "@/pages/home/style/address_add.scss";
 	.cu-form-group .title {
 		min-width: calc(4em + 15px);
 	}

@@ -8,7 +8,7 @@
 		</view>
 		
 		<view style="height: 100%;  display: flex; justify-content: center;align-items: center; background-color: #f5f5f5;" v-if="!this.images">
-			<image src="/static/no-data.jpeg" mode="widthFix"></image>
+			<image src="/static/public/no-data.jpeg" mode="widthFix"></image>
 		</view>
 		
 		<view class="cu-load load-modal" v-if="loadModal.show">
@@ -19,15 +19,12 @@
 </template>
 
 <script>
-import net from '../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			images: "images",
 			data: true,
 		};
@@ -41,10 +38,7 @@ export default {
 	methods: {
 		// 获取分享图
 		getMerchantPic(){
-
-	    	net({
-	        	url:"/V1/team_share",
-	            method:'get',
+	    	net({ url:"/V1/team_share", method:'get',
 	            success: (res) => {
 					this.loadModal.show = false;
 					if (res.data.success && res.data.success.data.link) { 
@@ -81,6 +75,6 @@ export default {
 </script>
 
 
-<style>
-@import '../style/team_ext.css';
+<style lang="scss">
+@import '@/pages/home/style/team_ext.scss';
 </style>

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 
@@ -170,6 +170,6 @@ export default {
 };
 </script>
 
-<style> 
-	@import url("../../style/machine_section");
+<style lang="scss"> 
+	@import "@/pages/mine/style/machine_section.scss";
 </style>

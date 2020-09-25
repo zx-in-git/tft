@@ -7,22 +7,22 @@
 			<view class="">
 				<view class="issue">
 					<text class="issue-text">畅伙伴功能介绍</text>
-					<image class="issue-img" src="../../../static/jiantou.png" mode="widthFix" />
+					<image class="issue-img" src="@/static/public/jiantou.png" mode="widthFix" />
 				</view>
 				<view class="xian"></view>
 				<view class="issue">
 					<text class="issue-text">钱客通功能介绍</text>
-					<image class="issue-img" src="../../../static/jiantou.png" mode="widthFix" />
+					<image class="issue-img" src="@/static/public/jiantou.png" mode="widthFix" />
 				</view>
 				<view class="xian"></view>
 				<view class="issue">
 					<text class="issue-text">钱包功能介绍</text>
-					<image class="issue-img" src="../../../static/jiantou.png" mode="widthFix" />
+					<image class="issue-img" src="@/static/public/jiantou.png" mode="widthFix" />
 				</view>
 				<view class="xian"></view>
 				<view class="issue">
 					<text class="issue-text">磁条卡认证方式</text>
-					<image class="issue-img" src="../../../static/jiantou.png" mode="widthFix" />
+					<image class="issue-img" src="@/static/public/jiantou.png" mode="widthFix" />
 				</view>
 			</view>
 		</view>
@@ -30,15 +30,15 @@
 			<view class="pos">
 				<view class="for">
 					<view class="pos-view">
-						<image class="pos-img" src="../../../static/xiugai.png" mode="widthFix" />
+						<image class="pos-img" src="@/static/public/edit.png" mode="widthFix" />
 						<view class="pos-text">装机问题</view>
 					</view>
 					<view class="pos-view">
-						<image class="pos-img" src="../../../static/xiugai.png" mode="widthFix" />
+						<image class="pos-img" src="@/static/public/edit.png" mode="widthFix" />
 						<view class="pos-text">到账问题</view>
 					</view>
 					<view class="pos-view">
-						<image class="pos-img" src="../../../static/xiugai.png" mode="widthFix" />
+						<image class="pos-img" src="@/static/public/edit.png" mode="widthFix" />
 						<view class="pos-text">使用问题</view>
 					</view>
 					<view class="pso-xian"></view>

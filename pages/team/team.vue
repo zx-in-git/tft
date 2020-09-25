@@ -144,16 +144,13 @@
 </template>
 
 <script>
-import net from '../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			TeamInfo:{
 				day:{
 					trade: 0.01,
@@ -193,9 +190,7 @@ export default {
 	methods: {
 		// 获取团队数据
 		getTeamInfo(){
-	    	net({
-	        	url:"/V1/team_data",
-	            method:'get',
+	    	net({ url:"/V1/team_data", method:'get',
 	            success: (res) => {
 					this.loadModal.show = false;
 					if(res.data.success){
@@ -210,6 +205,6 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/team.css';
+<style lang="scss">
+@import 'style/team.scss';
 </style>

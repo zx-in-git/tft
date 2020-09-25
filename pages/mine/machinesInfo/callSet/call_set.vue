@@ -7,7 +7,7 @@
 						<view class="model">选择划拨机具政策</view>
 						<view class="amount" v-if="policyInfo.id == undefined">请选择</view>
 						<view class="amount" v-else>{{policyInfo.title}}</view>
-						<image class="model-image" src="/static/jiantou.png" mode="widthFix"></image>
+						<image class="model-image" src="/static/public/jiantou.png" mode="widthFix"></image>
 					</view>
 				</navigator>
 			</view>
@@ -17,7 +17,7 @@
 					<view class="model">选择划拨伙伴</view>
 					<view class="amount" v-if="partnerInfo.id == undefined">请选择</view>
 					<view class="amount" v-else>{{partnerInfo.nickname}} - {{partnerInfo.account}}</view>
-					<image class="model-image" src="/static/jiantou.png" mode="widthFix"></image>
+					<image class="model-image" src="/static/public/jiantou.png" mode="widthFix"></image>
 				</view>
 				</navigator>
 			</view>
@@ -49,17 +49,11 @@ export default {
 		// 选择划拨
 		transfer(url){
 			if (this.partnerInfo.id == undefined) {
-				uni.showToast({
-					title: '请选择划拨伙伴',
-					icon: 'none'
-				})
+				uni.showToast({ title: '请选择划拨伙伴', icon: 'none' })
 				return false;
 			}
 			if (this.policyInfo.id == undefined) {
-				uni.showToast({
-					title: '请选择划拨机具政策',
-					icon: 'none'
-				})
+				uni.showToast({ title: '请选择划拨机具政策', icon: 'none' })
 				return false;
 			}
 			uni.navigateTo({
@@ -70,6 +64,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/transfer.css");
+<style lang="scss">
+@import "@/pages/mine/style/transfer.scss";
 </style>

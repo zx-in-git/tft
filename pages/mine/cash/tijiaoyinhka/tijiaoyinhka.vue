@@ -18,7 +18,7 @@
 				<view class="add-view">
 					<view class="add-name">银行卡号：</view>
 					<input placeholder="请输入银行卡号" class="add-text1" placeholder-class="place" />
-					<image class="add-img" src="../../../../static/zxj.png" mode="widthFix" />
+					<image class="add-img" src="/static/public/zxj.png" mode="widthFix" />
 				</view>
 			</view>
 		</view>
@@ -29,20 +29,20 @@
 					<view class="bank">
 						<view class="bank-name">开户行：</view>
 						<view class="bank-text">请选择开户行</view>
-						<image class="bank-img" src="../../../../static/jiantou.png" mode="widthFix" />
+						<image class="bank-img" src="@/static/public/jiantou.png" mode="widthFix" />
 					</view>
 				</navigator>
 				<view class="add-xian"></view>
 				<view class="bank">
 					<view class="bank-name">开户地区：</view>
 					<view class="bank-text">请选择地区</view>
-					<image class="bank-img" src="../../../../static/jiantou.png" mode="widthFix" />
+					<image class="bank-img" src="/static/public/jiantou.png" mode="widthFix" />
 				</view>
 				<view class="add-xian"></view>
 				<view class="bank">
 					<view class="bank-name">开户支行：</view>
 					<view class="bank-text">请选择开户支行</view>
-					<image class="bank-img" src="../../../../static/jiantou.png" mode="widthFix" />
+					<image class="bank-img" src="/static/public/jiantou.png" mode="widthFix" />
 				</view>
 				<view class="add-xian"></view>
 			</view>

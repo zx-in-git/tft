@@ -7,7 +7,7 @@
 						<text class="model-text">{{item.title}}</text>
 					</view>
 					<!-- <view class="amount"></view> -->
-					<image class="model-image" src="/static/jiantou.png" mode="widthFix"></image>
+					<image class="model-image" src="/static/public/jiantou.png" mode="widthFix"></image>
 				</view>
 				<view class="xian"></view>
 			</view>
@@ -25,14 +25,11 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 export default {
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			policy: []
 		};
 	},
@@ -44,9 +41,7 @@ export default {
 	methods: {
 		// 获取政策信息
 		getPolicyList(){
-			net({
-	        	url:"/V1/getPolicy",
-	            method: 'get',
+			net({ url:"/V1/getPolicy", method: 'get',
 	            success: (res) => {
 					this.loadModal.show = false;
 					if(res.data.success && res.data.success.data)
@@ -73,6 +68,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../../style/policy_opt.css");
+<style lang="scss">
+	@import "@/pages/mine/style/policy_opt.scss";
 </style>

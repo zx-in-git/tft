@@ -13,10 +13,10 @@
 				<view class="mbc">
 					<checkbox class="radio" checked="true" disabled="false" v-if="item.is_default == 1">默认结算卡</checkbox>
 					<view class="bank-edit" @click="cardEdit(item.id)">
-						<uni-icons type="compose" size="20" class="edit-icon" color="#EE4000"></uni-icons> 修改
+						<uni-icons type="compose" size="20" class="edit-icon"></uni-icons> 修改
 					</view>
 					<view class="bank-edit" @click="cardDel(item.id, index)">
-						<uni-icons type="trash" size="20" class="edit-icon" color="#EE4000"></uni-icons> 删除
+						<uni-icons type="trash" size="20" class="edit-icon"></uni-icons> 删除
 					</view>
 				</view>
 			</view>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-	import net from '../../../../common/net.js';
+	import net from '@/common/net.js';
 		
 	import uniIcons from '@/components/uni-icons/uni-icons.vue'
 	export default {
@@ -152,6 +152,6 @@
 	};
 </script>
 
-<style>
-@import url("../../style/user_bank_card");
+<style lang="scss">
+@import "@/pages/mine/style/user_bank_card.scss";
 </style>

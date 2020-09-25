@@ -2,7 +2,7 @@
 	<view>
 		<view class="sousuo">
 			<view class="sousuo-view">
-				<image class="input-image" src="/static/left_fdj.png" mode="aspectFit"></image>
+				<image class="input-image" src="/static/public/left_fdj.png" mode="aspectFit"></image>
 				<input class="input" placeholder="请正确输入有效SN号" />
 			</view>
 		</view>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 export default {
 	data() {
@@ -122,7 +122,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 /* 搜索框 */
 .sousuo {
 	width: 90%;
@@ -182,7 +182,7 @@ export default {
 .button{
 	position: fixed;
 	width: 100%;
-	background-color: #ff8c00;
+	background: $system-bt-color;
 	bottom: 0px;
 	height: 90upx;
 	text-align: center;

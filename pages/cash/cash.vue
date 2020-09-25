@@ -26,7 +26,7 @@
 			<picker class="screen cash-type" mode="selector" :range-key="'name'" :range="useName" @change="changTab">
 				<view class="type-title">
 					{{ typeName }}
-					<image src="../../static/triangle.png" mode="widthFix" class="triangle"></image>
+					<image src="/static/public/triangle.png" mode="widthFix" class="triangle"></image>
 				</view>
 			</picker>
 			
@@ -39,7 +39,7 @@
 					@change="changeDatetimePicker"
 				></biaofun-datetime-picker>
 				
-				<image src="../../static/triangle.png" mode="widthFix" class="triangle"></image>
+				<image src="/static/public/triangle.png" mode="widthFix" class="triangle"></image>
 			</view>
 		</view>
 
@@ -52,36 +52,38 @@
 			<view class="across"></view>
 			<view class="for" v-for="(t,d) in item.list" :key="d">
 				<view class="detail">
-					<image class="detail-img" v-if="t.type == 1" src="/static/sy/zhi.png"  />
+					<image class="detail-img" v-if="t.type == 1" src="/static/cash/zhi.png"  />
 					<view class="detail-name" v-if="t.type == 1">直营分润</view>
 					
-					<image class="detail-img" v-if="t.type == 2" src="/static/sy/zhi.png"  />
+					<image class="detail-img" v-if="t.type == 2" src="/static/cash/team.png"  />
 					<view class="detail-name" v-if="t.type == 2">团队分润</view>
 					
-					<image class="detail-img" v-if="t.type == 3" src="/static/sy/zhi.png"  />
+					<image class="detail-img" v-if="t.type == 3" src="/static/cash/zhi.png"  />
 					<view class="detail-name" v-if="t.type == 3">激活返现</view>
 					
-					<image class="detail-img" v-if="t.type == 4" src="/static/sy/zhi.png"  />
+					<image class="detail-img" v-if="t.type == 4" src="/static/cash/zhi.png"  />
 					<view class="detail-name" v-if="t.type == 4">间推激活返现</view>
 					
 					
-					<image class="detail-img" v-if="t.type == 5" src="/static/sy/fan.png"  />
+					<image class="detail-img" v-if="t.type == 5" src="/static/cash/fan.png"  />
 					<view class="detail-name" v-if="t.type == 5">间间推激活返现</view>
 					
 					
-					<image class="detail-img" v-if="t.type == 6" src="/static/sy/fan.png"  />
+					<image class="detail-img" v-if="t.type == 6" src="/static/cash/fan.png"  />
 					<view class="detail-name" v-if="t.type == 6">达标返现</view>
 					
-					<image class="detail-img" v-if="t.type == 7" src="/static/sy/fan.png"  />
+					<image class="detail-img" v-if="t.type == 7" src="/static/cash/fan.png"  />
 					<view class="detail-name" v-if="t.type == 7">达标返现(团队)</view>
 					
 					
-					<image class="detail-img" v-if="t.type == 8" src="/static/sy/fan.png"  />
+					<image class="detail-img" v-if="t.type == 8" src="/static/cash/fan.png"  />
 					<view class="detail-name" v-if="t.type == 8">累计达标返现</view>
 					
-					<image class="detail-img" v-if="t.type == 9" src="/static/sy/fan.png"  />
+					<image class="detail-img" v-if="t.type == 9" src="/static/cash/fan.png"  />
 					<view class="detail-name" v-if="t.type == 9">累计达标返现(团队)</view>
 					
+					<image class="detail-img" v-if="t.type == 11" src="/static/cash/team.png"  />
+					<view class="detail-name" v-if="t.type == 11">激活返现(团队)</view>
 					
 					<view class="detail-text">+{{ t.money}}</view>
 				</view>
@@ -105,7 +107,7 @@
 </template>
 
 <script>
-import net from '../../common/net.js';
+import net from '@/common/net.js';
 import biaofunDatetimePicker from '@/components/biaofun-datetime-picker/biaofun-datetime-picker.vue';
 
 export default {
@@ -117,10 +119,7 @@ export default {
 	},
 	data() {
 		return {
-			loadModal: {
-				show: false,
-				text: '加载中...'
-			},
+			loadModal: { show: false, text: '加载中...' },
 			data:{
 				revenueAll: '0.00',
 				revenueDay: '0.00',
@@ -187,6 +186,6 @@ export default {
 };
 </script>
 
-<style>
-@import 'style/income.css';
+<style lang="scss">
+@import 'style/income.scss';
 </style>

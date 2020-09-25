@@ -19,15 +19,12 @@
 </template>
 
 <script>
-import net from '../../../../common/net.js';
+import net from '@/common/net.js';
 
 	export default {
 		data() {
 			return {
-				loadModal: {
-					show: false,
-					text: '提交中...'
-				},
+				loadModal: { show: false, text: '提交中...' },
 				
 				oldPass: '',
 				newPass: '',
@@ -123,6 +120,6 @@ import net from '../../../../common/net.js';
 	}
 </script>
 
-<style>
-@import '../../style/setting.css';
+<style lang="scss">
+@import '../../style/setting.scss';
 </style>

@@ -10,7 +10,7 @@
 				<navigator :url="'/pages/Article/ArtilcleDetail?aid=' + item.id" v-for="(item,index) in dataList" :key="item.id">
 					<view class="issue">
 							<text class="issue-text">{{ item.title }}</text>
-							<image class="issue-img" src="/static/jiantou.png" />
+							<image class="issue-img" src="/static/public/jiantou.png" />
 					</view>
 				</navigator>
 			</view>
@@ -21,21 +21,21 @@
 			<view class="pos">
 				<view class="for">
 					<view class="pos-view">
-						<image class="pos-img" src="/static/新建文件夹/xiugai.png" />
+						<image class="pos-img" src="/static/public/edit.png" />
 						<view class="pos-text">装机问题</view>
 					</view>
 					<view class="pso-xian"></view>
 				</view>
 				<view class="for">
 					<view class="pos-view">
-						<image class="pos-img" src="/static/新建文件夹/xiugai.png" />
+						<image class="pos-img" src="/static/public/edit.png" />
 						<view class="pos-text">到账问题</view>
 					</view>
 					<view class="pso-xian"></view>
 				</view>
 				<view class="for">
 					<view class="pos-view">
-						<image class="pos-img" src="/static/新建文件夹/xiugai.png" />
+						<image class="pos-img" src="/static/public/edit.png" />
 						<view class="pos-text">使用问题</view>
 					</view>
 					<view class="pso-xian"></view>

@@ -2,7 +2,7 @@
 	<view class="body">
 		<view class="pay">
 			<view class="pay-view">
-				<image class="pay-img" src="../../../../static/wx.png" mode="widthFix" />
+				<image class="pay-img" src="@/static/mine/wx.png" mode="widthFix" />
 				<view class="pay-text">微信支付</view>
 			</view>
 			<view class="ckeck">
