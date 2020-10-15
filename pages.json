@@ -417,6 +417,20 @@
             "path" : "pages/mine/userInfo/userInfo",
             "style" : {}
         }
+        ,{
+            "path" : "pages/mine/policy_list/policy_list",
+            "style" : {
+				"navigationBarTitleText": "我的政策",
+				"navigationBarTextStyle": "black"
+			}
+        }
+        ,{
+            "path" : "pages/mine/policy_list/share_profit",
+            "style" : {
+				"navigationBarTitleText": "我的政策",
+				"navigationBarTextStyle": "black"
+			}
+        }
     ],
 
 	"globalStyle": {

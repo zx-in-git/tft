@@ -51,6 +51,15 @@
 		<view class="NavigationBar">
 			<view class="Bar1">
 				
+				<navigator  hover-class="none"  class="url" url="./policy_list/policy_list">
+					<view class="div">
+						<image class="div-img" src="/static/home/mine-policy.png" />
+						<view class="div-text">我的政策</view>
+						<image class="arrows" src="/static/public/jiantou.png" />
+					</view>
+					<view class="across"></view>
+				</navigator>
+				
 				<navigator  hover-class="none"  class="url" url="machinesInfo/machinesInfo">
 					<view class="div">
 						<image class="div-img" src="/static/home/temial.png" />

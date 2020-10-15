@@ -1,34 +1,32 @@
 <template>
 	<view>
 		<view class="profit">
-			<view class="fr_top">
+			<!-- <view class="fr_top">
 				<image class="fr_iamge" src="/static/public/mark.png"></image>
 				<view class="view_p">注：当保存参数后新参数即时生效。</view>
-			</view>
+			</view> -->
 			
-			<view class="body" v-if="rateList.length > 0">
+			<!-- 结算价调整 -->
+			<view class="body" v-if="tradePrice.length > 0">
 				<view class="view_h1">
-					<view class="text">商户费率参数</view>
+					<view class="text">结算价参数</view>
 				</view>
 				<view class="rule"></view>
 				<!-- 信用卡 -->
-				<block v-for="(item, index) in rateList" :key="index">
+				<block v-for="(item, index) in tradePrice" :key="index">
 					<view class="rule-view">
-						<view class="rule_p" v-if="item.is_top == 0">
+						<view class="rule_p" v-if="item.title != '借记卡封顶'">
 							<view class="view_p2">{{item.title}}</view>
-							<input class="rule_input" type="number" v-model="item.default_rate" />%
-							<view class="view_s">{{item.min_rate}}% ~ {{item.max_rate}}%</view>
+							<input class="rule_input" type="number" disabled="true" v-model="item.price" />%
 						</view>
 						<view class="rule_p" v-else>
 							<view class="view_p2">{{item.title}}</view>
-							<input class="rule_input" type="number" v-model="item.default_rate" />元
-							<view class="view_s">{{item.min_rate}}元 ~ {{item.max_rate}}元</view>
+							<input class="rule_input" type="number" disabled="true" v-model="item.price" />元
 						</view>
 					</view>
 					<view class="rule"></view>
 				</block>
 			</view>
-			<button class="button" @click="submitForm()">确 认 修 改</button>
 		</view>
 		
 		<view class="cu-load load-modal" v-if="loadModal.show">
@@ -47,96 +45,125 @@ export default {
 				show: false,
 				text: '加载中...'
 			},
-			merchant_code: '',
+			gid: '',			// 政策id
 			
-			rateList: [],
-			setRate: []
+			// 结算价参数
+			tradePrice: []
 		};
 	},
 	
 	onLoad(options) {
-		this.merchant_code = options.code;
+		this.gid = options.gid;
 		
 		this.loadModal.show = true;
-		this.getMerchantsRate()
+		// 获取用户结算价信息
+		this.getUserPrice();
 	},
 	
 	methods: {
 		// 获取用户结算价信息
-		getMerchantsRate(){
+		getUserPrice(){
 			net({
-				url:"/V1/getMerchantsRate",
+				url:"/V1/get_logon_user_settle",
 				method:'GET',
 				data:{
-					code: this.merchant_code
+					gid: this.gid
 				},
 				success: (res) => {
 					console.log(res);
 					this.loadModal.show = false;
 					if (res.data.success) {
-						this.rateList = res.data.success.data;
-						this.rateList.forEach((item, index) => {
-							item.default_rate = item.default_rate / 1000;
-							item.max_rate = item.is_top == 0 ? item.max_rate / 1000 : item.max_rate / 100000;
-							item.min_rate = item.is_top == 0 ? item.min_rate / 1000 : item.min_rate / 100000;
-							
-						})
+						// 结算信息
+						if (res.data.success.data) {
+							var tradeList = res.data.success.data;
+							for (var i = 0; i < tradeList.length; i++) {
+								if (tradeList[i].title == '借记卡封顶') {
+									tradeList[i].price /= 100;
+								} else {
+									tradeList[i].price /= 1000;
+								}
+							}
+							this.tradePrice = tradeList;
+						}
+						
 					} else {
 						uni.showToast({
 							title: res.data.error.message,
-							icon: 'none',
-							position: 'bottom'
+							icon: 'none'
 						})
 					}
+					
 				},
 				fail: () => {
 					uni.showToast({
-						title: '商户费率信息获取失败',
-						icon: 'none',
-						position: 'bottom'
+						title: '政策信息获取失败',
+						icon: 'none'
 					})
 				},
+	      	})
+		},
+		
+		// 获取用户政策信息
+		getPolicy(){
+			net({
+				url:"/V1/userPolicy",
+				method:'GET',
+				data:{
+					uid: this.uid,
+					gid: this.gid
+				},
+				success: (res) => {
+					console.log(res);
+					if (res.data.success) {
+						this.policyList = res.data.success.data;
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						})
+					}
+				}
 	      	})
 		},
 		
 		// 提交表单
 		submitForm(){
 			var error = 0;
-			this.rateList.forEach((item, key) => {
-				if (item.default_rate > item.max_rate) {
+			this.tradePrice.forEach((item, key) => {
+				if (item.price > item.max) {
 					uni.showToast({
-						title: item.title + '费率可设置最大值为' + item.max_rate,
+						title: item.title + '结算可设置最大值为' + item.max,
 						icon: 'none',
 						mask: true
 					})
 					error = 1;
 				}
 				
-				if (item.default_rate < item.min_rate) {
+				if (item.price < item.min) {
 					uni.showToast({
-						title: item.title + '费率可设置最小值为'+ item.min_rate,
+						title: item.title + '结算可设置最小值为'+ item.min,
 						icon: 'none',
 						mask: true
 					})
 					error = 1;
 				}
 				
-				const price = item.is_top == 1 ? item.default_rate * 100000 : item.default_rate * 1000;
-				this.setRate.push({'index': item.index, 'default_rate' : Number(price)});
+				const price = item.title == '借记卡封顶' ? item.price * 100 : item.price * 1000;
+				this.setPrice.push({'index': item.index, 'price' : Number(price)});
 			});
 			
 			if (error == 1) {
 				return false;
 			}
 			
-			console.log(this.setRate);
 			this.loadModal.show = true;
 			net({
-				url:"/V1/setMerchantsRate",
+				url:"/V1/setUserPrice",
 				method: 'POST',
 				data:{
-					code: this.merchant_code,
-					rate: this.setRate
+					uid: this.uid,
+					gid: this.gid,
+					set_price: this.setPrice
 				},
 	            success: (res) => {
 					console.log(res);
@@ -151,7 +178,7 @@ export default {
 						var that = this;
 						setTimeout(function() {
 							uni.redirectTo({
-								url: './rate_details?code=' + that.merchant_code
+								url: './share_profit?gid=' + that.gid + '&uid=' + that.uid
 							})
 						}, 1500);
 					} else {
@@ -169,7 +196,5 @@ export default {
 
 <style lang="scss">
 @import "@/pages/home/style/profit_data.scss";
-.button {
-	margin-top: 60rpx;
-}
+.view_p2 { margin-right: 220rpx;}
 </style>

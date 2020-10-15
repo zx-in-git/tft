@@ -17,6 +17,14 @@
 				</view>
 			</view>
 			<view class="rule"></view>
+			<view class="rule-view">
+				<view class="rule_p">
+					<view class="view_p2 view_p4">流量卡费返现</view>
+					<input class="rule_input" type="number" v-model="servicePrice.sim_money" /> 元
+					<view class="view_s">{{servicePrice.sim_money_min}} ~ {{servicePrice.sim_money_max}} 元</view>
+				</view>
+			</view>
+			<view class="rule"></view>
 			
 			<button class="button" @click="setActive()">确 认 修 改</button>
 		</view>
@@ -63,6 +71,8 @@ export default {
 			activePrice: [],
 			// 达标参数
 			standardPrice: [],
+			// 服务费参数
+			servicePrice: [],
 			
 			setStandardData: []
 		};
@@ -90,13 +100,18 @@ export default {
 					pid: this.pid
 				},
 				success: (res) => {
-					// console.log(res);
+					console.log(res);
 					this.loadModal.show = false;
 					if (res.data.success) {
 						if (res.data.success.data) {
-							this.activePrice.active_money = res.data.success.data.active.active_money / 100;
-							this.activePrice.active_money_max = res.data.success.data.active.active_money_max / 100;
-							this.activePrice.active_money_min = res.data.success.data.active.active_money_min / 100;
+							this.activePrice = res.data.success.data.active;
+							this.servicePrice = res.data.success.data.service;
+							this.activePrice.active_money /= 100;
+							this.activePrice.active_money_max /= 100;
+							this.activePrice.active_money_min /= 100;
+							this.servicePrice.sim_money /= 100;
+							this.servicePrice.sim_money_min /= 100;
+							this.servicePrice.sim_money_max /= 100;
 						}
 					} else {
 						uni.showToast({
@@ -118,7 +133,7 @@ export default {
 					pid: this.pid
 				},
 				success: (res) => {
-					console.log(res);
+					// console.log(res);
 					if (res.data.success) {
 						this.standardPrice = res.data.success.data;
 						this.standardPrice.forEach((item, index) => {
@@ -159,7 +174,8 @@ export default {
 				data:{
 					uid: this.uid,
 					pid: this.pid,
-					return_money: this.activePrice.active_money * 100
+					return_money: this.activePrice.active_money * 100,
+					sim_money: this.servicePrice.sim_money * 100,
 				},
 				success: (res) => {
 					this.loadModal.show = false;
@@ -167,7 +183,7 @@ export default {
 					let that = this;
 					if (res.data.success) {
 						uni.showToast({
-							title: '激活返现设置成功',
+							title: '设置成功',
 							icon: 'none',
 							position: 'bottom'
 						});

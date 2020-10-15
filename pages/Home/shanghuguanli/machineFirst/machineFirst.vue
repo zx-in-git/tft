@@ -57,13 +57,13 @@
 				</view>
 			</navigator>
 			
-			<!-- <view class="dara-xian"></view>
+			<view class="dara-xian"></view>
 			<navigator :url="'../rate_details/rate_details?code=' + merchantInfo.merchant_code" v-if="type == 2">
 				<view class="data">
 					<view class="phone">商户费率</view>
 					<view class="mark">查看</view>
 				</view>
-			</navigator> -->
+			</navigator>
 		</view>
 		
 		<view class="cu-load load-modal" v-if="loadModal.show">
